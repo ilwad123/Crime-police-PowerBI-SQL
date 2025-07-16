@@ -59,7 +59,7 @@ These areas have a higher ethnic population and are considered to have **higher 
 
 ---
 
-## 🛠️ Tools Used
+## Tools Used
 
 - **Python (Jupyter Notebook)**: Data cleaning and feature engineering using `pandas`, `numpy`
 - **SQL**: Structured storage and query logic (e.g. filtering by ethnicity or location)
@@ -68,12 +68,15 @@ These areas have a higher ethnic population and are considered to have **higher 
 
 ---
 
-## 🧹 Data Cleaning (`stop_search_data_cleaning.ipynb`)
+## Data Cleaning (`stop_search_data_cleaning.ipynb`)
 
 The raw dataset was cleaned using Python with the following steps:
 
 - Removed duplicates and irrelevant columns
+- Removed fully empty columns aswell
 - Flagged and logged records with missing officer/subject ethnicity
+- Replaced missing values with Unknown
+- For missing values in the longitude and latitude columns, replaced them with NULL since these are numerical and compatible with SQL
 - Exported final cleaned dataset as a `.csv` file for SQL import
 
 ---
